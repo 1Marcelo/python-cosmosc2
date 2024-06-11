@@ -63,6 +63,15 @@ This file can then be used by collaborators to update virtual environments using
 py -m pip install -r requirements.txt
 ```
 
+### Package and Distribute to PyPi Test Repo
+1. `pip3 install --upgrade build`
+2. `python3 -m build`
+3. `pip3 install --upgrade twine`
+4. `python3 -m twine upload --repository <reponame> dist/*`
+
+
+
+
 ### Deactivate the Environment
 
 To return to normal system settings, use the deactivate command.
