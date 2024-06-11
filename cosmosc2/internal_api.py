@@ -22,7 +22,7 @@ def cosmos_status():
         status = cosmos_status()
     """
     resp = cosmosc2.COSMOS.get(
-        "/cosmos-api/internal/status", headers={"Accept": "application/json"}
+        "/openc3-api/internal/status", headers={"Accept": "application/json"}
     )
     return resp.json()
 
@@ -33,7 +33,7 @@ def cosmos_health():
         health = cosmos_health()
     """
     resp = cosmosc2.COSMOS.get(
-        "/cosmos-api/internal/health", headers={"Accept": "application/json"}
+        "/openc3-api/internal/health", headers={"Accept": "application/json"}
     )
     return resp.json()
 
@@ -44,6 +44,6 @@ def cosmos_metrics():
         metrics = cosmos_metrics()
     """
     resp = cosmosc2.COSMOS.get(
-        "/cosmos-api/internal/metrics", headers={"Accept": "plain/txt"}
+        "/openc3-api/internal/metrics", headers={"Accept": "plain/txt"}
     )
     return resp.text

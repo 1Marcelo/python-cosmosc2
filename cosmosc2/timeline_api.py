@@ -22,7 +22,7 @@ def cosmos_timelines():
         timelines = cosmos_timelines()
     """
     resp = cosmosc2.COSMOS.get(
-        "/cosmos-api/timeline", headers={"Accept": "application/json"}
+        "/openc3-api/timeline", headers={"Accept": "application/json"}
     )
     return resp.json()
 
@@ -33,7 +33,7 @@ def cosmos_timeline_activities(timeline: str):
         activities = cosmos_timeline_activities("alpha")
     """
     resp = cosmosc2.COSMOS.get(
-        f"/cosmos-api/timeline/{timeline}/activities",
+        f"/openc3-api/timeline/{timeline}/activities",
         headers={"Accept": "application/json"},
     )
     return resp.json()
@@ -45,6 +45,6 @@ def cosmos_timeline_activity_count(timeline: str):
         count = cosmos_timeline_activity_count("alpha")
     """
     resp = cosmosc2.COSMOS.get(
-        f"/cosmos-api/timeline/{timeline}/count", headers={"Accept": "plain/txt"}
+        f"/openc3-api/timeline/{timeline}/count", headers={"Accept": "plain/txt"}
     )
     return resp.text

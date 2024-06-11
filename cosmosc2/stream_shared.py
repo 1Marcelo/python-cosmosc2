@@ -54,7 +54,7 @@ class CosmosAsyncClient:
             callback (callable): methods called when data recivied
         """
         self.stream.subscribe(
-            "/cosmos-api/cable",
+            "/openc3-api/cable",
             {"command": "subscribe", "identifier": self.streaming_id()},
             callback,
         )
@@ -64,10 +64,10 @@ class CosmosAsyncClient:
         Have the stream unsubscribe from the streaming channel
         """
         self.stream.queue(
-            "/cosmos-api/cable",
+            "/openc3-api/cable",
             {"command": "unsubscribe", "identifier": self.streaming_id()},
         )
-        self.stream.unsubscribe("/cosmos-api/cable")
+        self.stream.unsubscribe("/openc3-api/cable")
 
     def streaming_channel_add(
         self,
@@ -98,7 +98,7 @@ class CosmosAsyncClient:
             }
         )
         self.stream.queue(
-            "/cosmos-api/cable",
+            "/openc3-api/cable",
             {
                 "command": "message",
                 "identifier": self.streaming_id(),
@@ -131,7 +131,7 @@ class CosmosAsyncClient:
             callback (callable): methods called when data recivied
         """
         self.stream.subscribe(
-            "/cosmos-api/cable",
+            "/openc3-api/cable",
             {"command": "subscribe", "identifier": self.message_id(history_count)},
             callback,
         )
@@ -144,7 +144,7 @@ class CosmosAsyncClient:
             history_count (int): stream history to request
         """
         self.stream.queue(
-            "/cosmos-api/cable",
+            "/openc3-api/cable",
             {"command": "unsubscribe", "identifier": self.message_id(history_count)},
         )
-        self.stream.unsubscribe("/cosmos-api/cable")
+        self.stream.unsubscribe("/openc3-api/cable")

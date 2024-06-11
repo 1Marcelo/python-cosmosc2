@@ -118,7 +118,7 @@ class CosmosConnection(ContextDecorator):
         """
         request_kwargs = {
             "auth": self.auth,
-            "url": f"{self.request_url}/cosmos-api/api",
+            "url": f"{self.request_url}/openc3-api/api",
             "data": json.dumps(hash_),
             "headers": {
                 "Content-Type": "application/json-rpc",

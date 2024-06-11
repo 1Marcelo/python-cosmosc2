@@ -86,7 +86,7 @@ class CosmosAsyncStream(Thread):
         Start a new asyncio.Task to the cosmos websocket endpoints.
 
         Parameters:
-            endpoint (str): example: /cosmos-api/cable
+            endpoint (str): example: /openc3-api/cable
             sub_msg (dict): send to cosmos once connected
             callback (callable): method to return messages to
         """
@@ -105,7 +105,7 @@ class CosmosAsyncStream(Thread):
         Stop an asyncio.Task
 
         Parameters:
-            endpoint (str): example: /cosmos-api/cable
+            endpoint (str): example: /openc3-api/cable
         """
 
         def _unsubscribe():
@@ -120,7 +120,7 @@ class CosmosAsyncStream(Thread):
         Queue a message to send to the websocket.
 
         Parameters:
-            endpoint (str): example: /cosmos-api/cable
+            endpoint (str): example: /openc3-api/cable
             message (dict): json based message to send
         """
 
@@ -136,7 +136,7 @@ class CosmosAsyncStream(Thread):
         Base asyncio.Task to connect and manage websocket.
 
         Parameters:
-            endpoint (str): example: /cosmos-api/cable
+            endpoint (str): example: /openc3-api/cable
             sub_msg (dict): json based message to send
             callback (callable): method/function to call with data
         """
